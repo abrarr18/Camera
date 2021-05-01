@@ -28,9 +28,6 @@ public class PaintActivity extends AppCompatActivity implements View.OnClickList
     TouchListener touchListener;
     Button red,blue, green, undo, clear, done;
     static final int REQUEST_IMAGE= 1;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +52,6 @@ public class PaintActivity extends AppCompatActivity implements View.OnClickList
         undo.setOnClickListener(this);
         clear.setOnClickListener(this);
         done.setOnClickListener(this);
-
-
     }
 
     public void addPath(int id, float x, float y) {

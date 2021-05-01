@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         picture = (Button) findViewById(R.id.buttonPicture);
 
     }
-
     public void onClick(View view){
 
         Intent takePicIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -33,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(takePicIntent, REQUEST_IMAGE);
         }
     }
-
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -47,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
             Intent i1 = new Intent(this, PaintActivity.class);
             i1.putExtra("photo", thumbnail);
             startActivity(i1);
-            //myCanvas.setBackground(new BitmapDrawable(getResources(), thumbnail));
         }
     }
 

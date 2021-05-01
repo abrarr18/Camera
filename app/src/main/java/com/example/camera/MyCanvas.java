@@ -7,10 +7,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.media.MediaPlayer;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,6 +19,7 @@ public class MyCanvas extends View {
     HashMap <Integer, Path> activePaths;
     Paint pathPaint;
     private int currentColor;
+    MediaPlayer mediaPlayer;
     Bitmap vt, hokieBird;
     private ArrayList<Icons> iconList = new ArrayList<>();
     private ArrayList<Path> pathList =new ArrayList<>();
@@ -40,6 +41,7 @@ public class MyCanvas extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        mediaPlayer = new MediaPlayer();
         for(Path path: activePaths.values()){
             canvas.drawPath(path, pathPaint);
         }
@@ -61,7 +63,6 @@ public class MyCanvas extends View {
         Path path = new Path();
         path.moveTo(x, y);
         activePaths.put(id, path);
-        Log.i("ID", "" + id);
         invalidate();
     }
 
@@ -79,7 +80,7 @@ public class MyCanvas extends View {
             Paint paint = getNewPaintPen(currentColor);
             paintList.add(paint);
             pathList.add(temp);
-            Log.i("Added",""+ pathList.size() + "  " + pathList);
+            //Log.i("Added",""+ pathList.size() + "  " + pathList);
             removeObject.add(true);
             activePaths.remove(id);
         }
