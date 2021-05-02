@@ -21,7 +21,6 @@ Camera is an app that allows users to take photo, add paint drawings and icons, 
 - [x] (5%) Undo both line-drawing and icon-adding
 - [x] (5%) Pencil sound
 ### App Walkthough GIF
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
 Taking Photo
 <img src="https://github.com/abrarr18/Camera/blob/master/takingpicgif.gif" width=250><br>
 Adding paint drawing
@@ -33,6 +32,7 @@ Undo & clear paints and icons
 
 ### Notes
 Describe any challenges encountered while building the app.
+Adding icons was little bit of a challenge for me. 
 
 ### Open-source libraries used
 
