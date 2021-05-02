@@ -1,9 +1,9 @@
-# Flix
-Flix is an app that allows users to browse movies from the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+# Camera
+Camera is an app that allows users to take photo, add paint drawings and icons, and undo or clear them. 
 
 ---
 
-## Flix
+## Camera
 
 ### User Stories
 
