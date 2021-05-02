@@ -17,7 +17,7 @@ Camera is an app that allows users to take photo, add paint drawings and icons, 
 - [x] (10%) Submission follows the guidelines, and README file is complete 
 #### Bonus points:
 - [x] (5%) Animated icons 
-- [x] (5%) Save to gallery
+- [ ] (5%) Save to gallery
 - [x] (5%) Undo both line-drawing and icon-adding
 - [x] (5%) Pencil sound
 ### App Walkthough GIF
