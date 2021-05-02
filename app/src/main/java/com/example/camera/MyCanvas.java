@@ -14,7 +14,6 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 public class MyCanvas extends View {
     HashMap <Integer, Path> activePaths;
     Paint pathPaint;
@@ -45,16 +44,12 @@ public class MyCanvas extends View {
         for(Path path: activePaths.values()){
             canvas.drawPath(path, pathPaint);
         }
-
-
-
-        for(int i=0;i<paintList.size();i++){
-            canvas.drawPath(pathList.get(i),paintList.get(i));
-        }
-
         for(int i =0; i<iconList.size(); i++){
             Icons temp = iconList.get(i);
             canvas.drawBitmap(temp.getImg(), temp.getX(),temp.getY(), null);
+        }
+        for(int i=0;i<paintList.size();i++){
+            canvas.drawPath(pathList.get(i),paintList.get(i));
         }
         super.onDraw(canvas);
     }
@@ -80,7 +75,6 @@ public class MyCanvas extends View {
             Paint paint = getNewPaintPen(currentColor);
             paintList.add(paint);
             pathList.add(temp);
-            //Log.i("Added",""+ pathList.size() + "  " + pathList);
             removeObject.add(true);
             activePaths.remove(id);
         }
@@ -93,10 +87,8 @@ public class MyCanvas extends View {
     }
 
     public void undo() {
-        Log.i("undo", "" + removeObject.size());
         if(removeObject.size()>0){
             if(removeObject.get(removeObject.size()-1)){
-                //Log.i("removePath", "" + paintList.remove(paintList.size() - 1));
                 paintList.remove(paintList.size() - 1);
                 pathList.remove(pathList.size() - 1);
             }
@@ -105,7 +97,6 @@ public class MyCanvas extends View {
 
             }
             removeObject.remove(removeObject.size()-1);
-            Log.i("undo", "" + removeObject.size());
         }
         invalidate();
     }
@@ -113,9 +104,7 @@ public class MyCanvas extends View {
     public void clear() {
         pathList.clear();
         paintList.clear();
-
         iconList.clear();
-
         removeObject.clear();
         invalidate();
     }
@@ -133,7 +122,6 @@ public class MyCanvas extends View {
 
     private Paint getNewPaintPen(int color) {
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-
         paint.setColor(color);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(70);

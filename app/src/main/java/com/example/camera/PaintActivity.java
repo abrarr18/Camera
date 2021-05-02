@@ -26,31 +26,31 @@ public class PaintActivity extends AppCompatActivity implements View.OnClickList
 
     MyCanvas myCanvas;
     TouchListener touchListener;
+    CapturePhotoUtils capturePhotoUtils;
     Button red,blue, green, undo, clear, done;
     static final int REQUEST_IMAGE= 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint);
+
         myCanvas = (MyCanvas) findViewById(R.id.myCanvas);
         Bundle b1 = getIntent().getExtras();
         Bitmap thumbnail = (Bitmap) b1.get("photo");
         myCanvas.setBackground(new BitmapDrawable(getResources(), thumbnail));
         touchListener = new TouchListener(this);
         myCanvas.setOnTouchListener(touchListener);
-
         red = (Button) findViewById(R.id.buttonRed);
-        blue = (Button) findViewById(R.id.buttonBlue);
-        green = (Button) findViewById(R.id.buttonGreen);
-        undo = (Button) findViewById(R.id.buttonUndo);
-        clear = (Button) findViewById(R.id.buttonClear);
-        done = (Button) findViewById(R.id.buttonDone);
-
         red.setOnClickListener(this);
+        blue = (Button) findViewById(R.id.buttonBlue);
         blue.setOnClickListener(this);
+        green = (Button) findViewById(R.id.buttonGreen);
         green.setOnClickListener(this);
+        undo = (Button) findViewById(R.id.buttonUndo);
         undo.setOnClickListener(this);
+        clear = (Button) findViewById(R.id.buttonClear);
         clear.setOnClickListener(this);
+        done = (Button) findViewById(R.id.buttonDone);
         done.setOnClickListener(this);
     }
 
@@ -106,6 +106,7 @@ public class PaintActivity extends AppCompatActivity implements View.OnClickList
                 myCanvas.clear();
                 break;
             case R.id.buttonDone:
+               //capturePhotoUtils.insertImage(getContentResolver(), "image", "The photo I took");
                 finish();
                 break;
         }

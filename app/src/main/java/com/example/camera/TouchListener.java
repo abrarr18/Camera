@@ -1,5 +1,10 @@
 package com.example.camera;
 
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.media.MediaPlayer;
+import android.os.IBinder;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -7,6 +12,11 @@ import androidx.core.view.GestureDetectorCompat;
 
 public class TouchListener implements View.OnTouchListener {
     PaintActivity paintActivity;
+    MusicPlayer musicPlayer;
+    MusicService musicService;
+    Intent startMusicServiceIntent;
+    boolean isBound = false;
+    boolean isInitialized = false;
     GestureDetectorCompat gestureDetectorCompat;
 
     public TouchListener(PaintActivity draw) {
@@ -43,6 +53,20 @@ public class TouchListener implements View.OnTouchListener {
         }
         return true;
     }
+    private ServiceConnection musicServiceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            MusicService.MyBinder binder = (MusicService.MyBinder) iBinder;
+            musicService = binder.getService();
+            isBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            musicService = null;
+            isBound = false;
+        }
+    };
 
 
 

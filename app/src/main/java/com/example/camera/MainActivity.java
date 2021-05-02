@@ -14,6 +14,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button picture;
+    CapturePhotoUtils capturePhotoUtils;
     static final int REQUEST_IMAGE= 1;
 
 
@@ -36,13 +37,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Intent i1 = new Intent(this, PaintActivity.class);
         if (requestCode == REQUEST_IMAGE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap thumbnail = (Bitmap) extras.get("data");
 
-            Intent i1 = new Intent(this, PaintActivity.class);
+            //Intent i1 = new Intent(this, PaintActivity.class);
+            capturePhotoUtils.insertImage(getContentResolver(), thumbnail,"image", "The photo I took");
+            //MediaStore.Images.Media.insertImage(getContentResolver(), thumbnail, "image", "The photo I took");
             i1.putExtra("photo", thumbnail);
             startActivity(i1);
+
         }
     }
 

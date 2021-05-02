@@ -7,46 +7,31 @@ public class MusicPlayer implements MediaPlayer.OnCompletionListener {
     private MusicService musicService;
     int musicStatus = 0;
     int musicIndex = 0;
+
+    static final int MUSICPATH = R.raw.pencilsound;
+    /**
     static final int[] MUSICPATH = new int[]{
             R.raw.pencilsound,
     };
 
     static final String[] MUSICNAME = new String[]{
             "Pencil Sound"
-
     };
+     **/
 
     public MusicPlayer(MusicService service) {
 
         this.musicService = service;
-
     }
-
 
     public int getMusicStatus() {
 
         return musicStatus;
     }
 
-    public String getMusicName() {
 
-        return MUSICNAME[musicIndex];
-    }
-
-    public int getIndex(String str) {
-        for (int i = 0; i < MUSICNAME.length; i++) {
-            if (str.compareTo(MUSICNAME[i]) == 0) {
-                //musicIndex=i;
-                return i;
-            }
-
-        }
-        return -1;
-    }
-
-    public void playMusic(int index) {
-        musicIndex = index;
-        player = MediaPlayer.create(this.musicService, MUSICPATH[musicIndex]);
+    public void playMusic() {
+        player = MediaPlayer.create(this.musicService, MUSICPATH);
         player.start();
         player.setOnCompletionListener(this);
     }
@@ -61,7 +46,7 @@ public class MusicPlayer implements MediaPlayer.OnCompletionListener {
             player.pause();
         }
         else{
-            playMusic(1);
+            playMusic();
         }
     }
 

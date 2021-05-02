@@ -21,9 +21,9 @@ public class MusicService extends Service {
         musicPlayer = new MusicPlayer(this);
     }
 
-    public void startMusic(int index){
+    public void startMusic(){
 
-        musicPlayer.playMusic(index);
+        musicPlayer.playMusic();
     }
 
     public void pauseMusic(){
