@@ -20,19 +20,21 @@ Camera is an app that allows users to take photo, add paint drawings and icons, 
 - [ ] (5%) Save to gallery
 - [x] (5%) Undo both line-drawing and icon-adding
 - [x] (5%) Pencil sound
-### App Walkthough GIF
-Taking Photo
-<img src="https://github.com/abrarr18/Camera/blob/master/takingpicgif.gif" width=250><br>
-Adding paint drawing
-<img src="https://github.com/abrarr18/Camera/blob/master/addpaint.gif" width=250><br>
-Adding Icon
-<img src="https://github.com/abrarr18/Camera/blob/master/addicon.gif" width=250><br>
-Undo & clear paints and icons
-<img src="https://github.com/abrarr18/Camera/blob/master/undoclear.gif" width=250><br>
 
-### Notes
-Describe any challenges encountered while building the app.
-Adding icons was little bit of a challenge for me. 
+## App Walkthough GIF
+
+### Taking Photo
+<img src="https://github.com/abrarr18/Camera/blob/master/takingpicgif.gif" width=250><br>
+
+### Adding paint drawing
+<img src="https://github.com/abrarr18/Camera/blob/master/addpaint.gif" width=250><br>
+
+### Adding Icon
+<img src="https://github.com/abrarr18/Camera/blob/master/addicon.gif" width=250><br>
+
+### Undo & clear paints and icons
+<img src="https://github.com/abrarr18/Camera/blob/master/undoclear.gif" width=250><br>
+ 
 
 ### Open-source libraries used
 
